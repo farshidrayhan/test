@@ -2,7 +2,6 @@ import re
 
 import numpy
 import numpy as np
-import mysql.connector
 
 # file.readline()
 
