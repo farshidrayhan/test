@@ -1,6 +1,5 @@
 import re
 import numpy as np
-import mysql.connector
 
 def spider_to_structural_info(file_param):
 
