@@ -1,6 +1,6 @@
 import re
 import numpy as np
-import mysql.connector
+# import mysql.connector
 
 def pssm_to_bigram(file_param):
 
