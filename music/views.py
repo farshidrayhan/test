@@ -289,7 +289,7 @@ class DownloadsView(generic.TemplateView):
 
 class InstructionsView(generic.TemplateView):
 
-    template_name = 'music/downloads.html'
+    template_name = 'music/instructions.html'
 
 #
 # class DetailView(generic.DetailView):

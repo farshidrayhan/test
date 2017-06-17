@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^$',views.IndexView.as_view(),name='index'),
     url(r'^contributors$',views.ContributorsView.as_view(),name='contributors'),
     url(r'^downloads$',views.DownloadsView.as_view(),name='downloads'),
-    url(r'^instructions$',views.DownloadsView.as_view(),name='instructions'),
+    url(r'^instructions$',views.InstructionsView.as_view(),name='instructions'),
 
     # /music/id
 
