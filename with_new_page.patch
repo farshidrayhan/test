@@ -1,0 +1,248 @@
+Index: music/apps.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/apps.py	(date 1497728668000)
++++ music/apps.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/migrations/0007_delete_drug.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/migrations/0007_delete_drug.py	(date 1497728668000)
++++ music/migrations/0007_delete_drug.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/templates/music/song_form.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/templates/music/song_form.html	(date 1497728668000)
++++ music/templates/music/song_form.html	(revision )
+@@ -1,0 +1,0 @@
+Index: music/templates/music/contributors.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/templates/music/contributors.html	(date 1497728668000)
++++ music/templates/music/contributors.html	(revision )
+@@ -1,0 +1,0 @@
+Index: music/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/views.py	(date 1497728668000)
++++ music/views.py	(revision )
+@@ -1,0 +1,0 @@
+Index: django_site/dl3.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- django_site/dl3.py	(date 1497728668000)
++++ django_site/dl3.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/templates/music/form-template.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/templates/music/form-template.html	(date 1497728668000)
++++ music/templates/music/form-template.html	(revision )
+@@ -1,0 +1,0 @@
+Index: manage.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- manage.py	(date 1497728668000)
++++ manage.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/migrations/0002_auto_20170514_0152.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/migrations/0002_auto_20170514_0152.py	(date 1497728668000)
++++ music/migrations/0002_auto_20170514_0152.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/migrations/0008_drugs.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/migrations/0008_drugs.py	(date 1497728668000)
++++ music/migrations/0008_drugs.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/templates/music/album_form.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/templates/music/album_form.html	(date 1497728668000)
++++ music/templates/music/album_form.html	(revision )
+@@ -1,0 +1,0 @@
+Index: music/migrations/0005_drug_table.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/migrations/0005_drug_table.py	(date 1497728668000)
++++ music/migrations/0005_drug_table.py	(revision )
+@@ -1,0 +1,0 @@
+Index: django_site/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- django_site/urls.py	(date 1497728668000)
++++ django_site/urls.py	(revision )
+@@ -1,0 +1,0 @@
+Index: media/drug
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- media/drug	(date 1497728668000)
++++ media/drug	(revision )
+@@ -1,0 +1,0 @@
+Index: music/static/music/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/static/music/style.css	(date 1497728668000)
++++ music/static/music/style.css	(revision )
+@@ -1,0 +1,0 @@
+Index: music/templates/music/downloads.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/templates/music/downloads.html	(date 1497728668000)
++++ music/templates/music/downloads.html	(revision )
+@@ -1,0 +1,0 @@
+Index: music/migrations/0003_song_is_favorite.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/migrations/0003_song_is_favorite.py	(date 1497728668000)
++++ music/migrations/0003_song_is_favorite.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/templates/music/detail.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/templates/music/detail.html	(date 1497728668000)
++++ music/templates/music/detail.html	(revision )
+@@ -1,0 +1,0 @@
+Index: music/templates/music/template_try_1.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/templates/music/template_try_1.html	(date 1497728668000)
++++ music/templates/music/template_try_1.html	(revision )
+@@ -1,0 +1,0 @@
+Index: music/tests.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/tests.py	(date 1497728668000)
++++ music/tests.py	(revision )
+@@ -1,0 +1,0 @@
+Index: django_site/wsgi.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- django_site/wsgi.py	(date 1497728668000)
++++ django_site/wsgi.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/urls.py	(date 1497728668000)
++++ music/urls.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/migrations/0006_auto_20170603_0112.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/migrations/0006_auto_20170603_0112.py	(date 1497728668000)
++++ music/migrations/0006_auto_20170603_0112.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/templates/music/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/templates/music/index.html	(date 1497728668000)
++++ music/templates/music/index.html	(revision )
+@@ -1,0 +1,0 @@
+Index: music/admin.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/admin.py	(date 1497728668000)
++++ music/admin.py	(revision )
+@@ -1,0 +1,0 @@
+Index: django_site/settings.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- django_site/settings.py	(date 1497728668000)
++++ django_site/settings.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/forms.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/forms.py	(date 1497728668000)
++++ music/forms.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/models.py	(date 1497728668000)
++++ music/models.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/migrations/0001_initial.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/migrations/0001_initial.py	(date 1497728668000)
++++ music/migrations/0001_initial.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/migrations/0004_auto_20170519_0230.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/migrations/0004_auto_20170519_0230.py	(date 1497728668000)
++++ music/migrations/0004_auto_20170519_0230.py	(revision )
+@@ -1,0 +1,0 @@
+Index: music/templates/music/base.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- music/templates/music/base.html	(date 1497728668000)
++++ music/templates/music/base.html	(revision )
+@@ -1,0 +1,0 @@
