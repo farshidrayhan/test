@@ -168,7 +168,7 @@ class IndexView(generic.ListView):
 
         # getting data from form
         if form.is_valid():
-            dataset = form.cleaned_data['dataset']
+            target_group = form.cleaned_data['target_group']
             spd = form.cleaned_data['spd']
             pssm = form.cleaned_data['pssm']
             drug = form.cleaned_data['drug']
@@ -180,7 +180,7 @@ class IndexView(generic.ListView):
             pssm_file = pssm.readline()
 
             # print(Drugs.objects.get(drug=drug).fingerprint)
-            drug_file = Drugs.objects.get(drug=drug).fingerprint
+            drug_file = Drugs.objects.get(name=drug).fingerprint
             # prints the lines in the console
             # print("spd file " , spd_file)
             # print("pssm file " , pssm_file)
@@ -209,9 +209,9 @@ class IndexView(generic.ListView):
         spd_file_url = fs.url(file_spd)
         spd = media_path + '/spd'
         pssm = media_path + '/pssm'
-        enzyme_path = media_path + '/'+ dataset + '.pkl'
+        enzyme_path = media_path + '/'+ target_group + '.pkl'
 
-        print(dataset)
+        print(target_group)
 
         clf_e = joblib.load(enzyme_path)
 
@@ -265,8 +265,8 @@ class IndexView(generic.ListView):
 
         # all data to be sent as a result of the request
         dict = {
-            'dataset': dataset,
-            'form' : form,
+            'dataset': target_group,
+            'form' : 'null',
             # 'file_spd':spd_file,
             # 'file_pssm':pssm_file,
             'zero_class':zero_class,
@@ -287,32 +287,36 @@ class DownloadsView(generic.TemplateView):
 
     template_name = 'music/downloads.html'
 
+class InstructionsView(generic.TemplateView):
 
-class DetailView(generic.DetailView):
-    model = Album
-    template_name = 'music/detail.html'
+    template_name = 'music/downloads.html'
 
-
-
-class AlbumCreate(CreateView):
-    model = Album
-    fields = ['artist','album_name','genre','album_logo']
-
-class AlbumUpdate(UpdateView):
-    model = Album
-    fields = ['artist','album_name','genre','album_logo']
-
-class AlbumDelete(DeleteView):
-    model = Album
-    success_url = reverse_lazy('music:index')
-
-
-
-
-class SongCreate(CreateView):
-    model = Song
-
-    fields = ['song_title','album','file_type','is_favorite']
+#
+# class DetailView(generic.DetailView):
+#     model = Album
+#     template_name = 'music/detail.html'
+#
+#
+#
+# class AlbumCreate(CreateView):
+#     model = Album
+#     fields = ['artist','album_name','genre','album_logo']
+#
+# class AlbumUpdate(UpdateView):
+#     model = Album
+#     fields = ['artist','album_name','genre','album_logo']
+#
+# class AlbumDelete(DeleteView):
+#     model = Album
+#     success_url = reverse_lazy('music:index')
+#
+#
+#
+#
+# class SongCreate(CreateView):
+#     model = Song
+#
+#     fields = ['song_title','album','file_type','is_favorite']
 
 
 

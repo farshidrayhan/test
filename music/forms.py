@@ -18,7 +18,7 @@ class indexForm(forms.Form):
         (nr, 'Nuclear Receptor'),
         (gpcr, 'GPCR'),
     )
-    dataset = forms.ChoiceField(choices=dataset_choice)
+    target_group = forms.ChoiceField(choices=dataset_choice)
     spd = forms.FileField()
     pssm = forms.FileField()
     drug = forms.ModelChoiceField(queryset=Drugs.objects.all().order_by('drug'))

@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>
     <title>
         {% block title %}
-            Test Site
+            iDTI-ESBoost
         {% endblock %}
     </title>
 </head>
@@ -29,7 +29,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'music:index' %}"> Test Site </a>
+            <a class="navbar-brand" href="{% url 'music:index' %}"> iDTI-ESBoost </a>
         </div>
 
         <!-- id connects the nav bar to icons in th smaller screen  -->
@@ -54,6 +54,13 @@
                     <a href="{% url 'music:downloads' %}">
                         <span class="glyphicon glyphicon-download" aria-hidden="true"></span> &nbsp;
                         Downloads
+                    </a>
+
+                </li>
+                <li class="{% block nav_bar_instructions %} {% endblock %}">
+                    <a href="{% url 'music:instructions' %}">
+                        <span class="glyphicon glyphicon-download" aria-hidden="true"></span> &nbsp;
+                        Instructions
                     </a>
 
                 </li>

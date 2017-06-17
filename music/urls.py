@@ -26,9 +26,11 @@ urlpatterns = [
     url(r'^$',views.IndexView.as_view(),name='index'),
     url(r'^contributors$',views.ContributorsView.as_view(),name='contributors'),
     url(r'^downloads$',views.DownloadsView.as_view(),name='downloads'),
+    url(r'^instructions$',views.DownloadsView.as_view(),name='instructions'),
+
     # /music/id
 
-    url(r'^(?P<pk>[0-9]+)/$',views.DetailView.as_view(),name="detail"),
+    # url(r'^(?P<pk>[0-9]+)/$',views.DetailView.as_view(),name="detail"),
 
     # /music/id/favorite
     # url(r'^(?P<album_id>[0-9]+)/favorite$',views.favorite,name="favorite"),
@@ -37,14 +39,14 @@ urlpatterns = [
     # chk index.html 1st href
 
     # music/album/add
-
-    url(r'album/add/$', views.AlbumCreate.as_view(), name="album-add"),
-
-    url(r'album/(?P<pk>[0-9]+)/delete/$', views.AlbumDelete.as_view(), name="album-delete"),
-
-    url(r'album/(?P<pk>[0-9]+)/$', views.AlbumUpdate.as_view(), name="album-update"),
-
-    url(r'song/add/(?P<pk>[0-9]+)/$', views.SongCreate.as_view(), name="song-add"),
+    #
+    # url(r'album/add/$', views.AlbumCreate.as_view(), name="album-add"),
+    #
+    # url(r'album/(?P<pk>[0-9]+)/delete/$', views.AlbumDelete.as_view(), name="album-delete"),
+    #
+    # url(r'album/(?P<pk>[0-9]+)/$', views.AlbumUpdate.as_view(), name="album-update"),
+    #
+    # url(r'song/add/(?P<pk>[0-9]+)/$', views.SongCreate.as_view(), name="song-add"),
 
 
 

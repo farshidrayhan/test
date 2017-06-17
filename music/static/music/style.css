@@ -7,10 +7,19 @@ body{
 .navbar{
     border-radius: 0 ;
 }
-
 .navbar-brand{
     font-family: 'Satisfy' , cursive ;
 }
 .h3{
-    font-family: 'Satisfy' , cursive ;
+    color: black;
+    font-size: inherit;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h4{
+    font-size: 22px;
+    font-family: "Satisfy", Helvetica, Arial, sans-serif;
+}
+
+.well {
+    background: whitesmoke  ;
 }
