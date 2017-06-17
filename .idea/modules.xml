@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/PycharmProjects/Database_project/.idea/Database_project.iml" filepath="$USER_HOME$/PycharmProjects/Database_project/.idea/Database_project.iml" />
-      <module fileurl="file://$USER_HOME$/PycharmProjects/Experiments_for_CMR/.idea/Experiments_for_CMR.iml" filepath="$USER_HOME$/PycharmProjects/Experiments_for_CMR/.idea/Experiments_for_CMR.iml" />
-      <module fileurl="file://$USER_HOME$/PycharmProjects/Experiments_for_DMF/.idea/Experiments_for_DMF.iml" filepath="$USER_HOME$/PycharmProjects/Experiments_for_DMF/.idea/Experiments_for_DMF.iml" />
-      <module fileurl="file://$USER_HOME$/PycharmProjects/Experiments_for_SS/.idea/Experiments_for_SS.iml" filepath="$USER_HOME$/PycharmProjects/Experiments_for_SS/.idea/Experiments_for_SS.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/django_site.iml" filepath="$PROJECT_DIR$/.idea/django_site.iml" />
     </modules>
   </component>
