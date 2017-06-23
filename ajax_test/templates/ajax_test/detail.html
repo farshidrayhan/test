@@ -1,0 +1,42 @@
+{% extends 'music/base.html' %}
+{% block title %}
+    Song Detail
+{% endblock %}
+
+{% block nav_bar_song %}
+    active
+{% endblock %}
+
+
+{% block body %}
+    <form action="{% url 'music:song-add' album.id %}" method="POST" style="display: inline;">
+        {#        <li>#}
+
+        {#            <a href="{% url 'music:song-add' album.id %}">#}
+        {#                <span class="glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Song#}
+
+        <button type="submit" class="btn btn-success">Add Song</button>
+
+        {#            </a>#}
+        {#        </li>#}
+
+        <!-- album.album_logo is the image object url converts it to file path  -->
+        <img src="{{ album.album_logo.url }}">
+        <h3>{{ album.artist }}</h3>
+        <h4> {{ album.album_name }}</h4>
+
+        {% csrf_token %}
+        {#            <ul>#}
+        {% for song in album.song_set.all %}
+            {{ song.song_title }}
+            {% if song.is_favorite %}
+                <img src="http://www.tickets-online.com/content/images/star.png">
+
+            {% endif %}
+
+            <br>
+
+        {% endfor %}
+
+    </form>
+{% endblock %}
