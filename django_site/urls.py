@@ -20,6 +20,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^music/', include('music.urls')),
+    url(r'^ajax/', include('ajax_test.urls')),
+
     # url(r'', include('music.urls')),
     # url(r'', include('music.urls')),
 ]

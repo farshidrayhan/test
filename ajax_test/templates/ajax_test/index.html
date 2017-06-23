@@ -1,0 +1,116 @@
+{% extends 'ajax_test/base.html' %}
+
+{% block nav_bar_home %}
+    active
+{% endblock %}
+
+{% block body %}
+
+
+
+    <div class="container">
+        <div class="well well-lg">
+            <h3>Test ajax</h3>
+            <a href="#demo" class="btn btn-info" data-toggle="collapse">Abstract</a>
+            <div id="demo" class="collapse">
+                Test document
+            </div>
+        </div>
+
+    </div>
+
+    {% block javascript %}
+        <script>
+
+        var mail = 0;
+        var name = 0;
+
+            $(":input").change(function (e) {
+
+
+                console.log($("#id_name").val());
+                console.log($("#id_mail").val());
+{#                console.log($(this).attr('id_mail'));#}
+                var name = $("#id_name").val();
+                var mail = $("#id_mail").val();
+
+{#                va#}
+
+
+                $.ajax({
+                    url: 'ajax/validate_name/',
+                    data: {
+                        'name': name,
+                        'mail': mail
+                        {#                        'mail': mail#}
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        if ( data.is_taken != 404)
+                            add_stuff(data.is_taken);
+
+                    }
+                });
+            });
+
+        </script>
+        <script>
+            function add_stuff(parameter) {
+                var ele = document.createElement("h4");
+                var node = document.createTextNode(parameter);
+
+                ele.appendChild(node);
+
+                var element = document.getElementById("div")
+                element.appendChild(ele)
+            }
+
+        </script>
+
+
+    {% endblock %}
+
+
+    <br>
+    {% if form != 'null' %}
+        <div class="container-fluid">
+            <div class="jumbotron col-lg-offset-3 col-lg-6">
+                <div class="row">
+                    <div class="col-lg-offset-1">
+                        <form method="post">
+
+                            {% csrf_token %}
+
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-info btn-lg">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {#    {% if form == 'null' %}#}
+    <div class="container-fluid">
+        <div class="">
+            <div class="jumbotron col-lg-6 col-md-8 col-lg-offset-3" id="div">
+                {% if error == '' %}
+                    <h2>name {{ name }} </h2>
+                    <h2>mail {{ mail }} </h2>
+                {% endif %}
+                {% if error == 'faulty file' %}
+                    <h1>Faulty file </h1>
+                {% endif %}
+                <h1></h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}
+

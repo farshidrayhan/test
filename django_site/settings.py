@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'music.apps.MusicConfig',  # from music / apps / music config for the server to load myy app
+    'ajax_test.apps.AjaxTestConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
