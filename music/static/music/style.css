@@ -23,16 +23,15 @@ body{
 h4{
     font-size: 22px;
 
-    font-family: "Satisfy", Helvetica, Arial, sans-serif;
+
 }
 .well{
-    background: white url("images/pro_back.png")  ;
 }
 
 .well_as {
-    background: white url("images/pro_back.png") no-repeat ;
+
 }
 
 .jumbotrons{
-    background: white url("images/background.png")  ;
+
 }
