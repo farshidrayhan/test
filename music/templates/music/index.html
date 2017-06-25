@@ -15,136 +15,164 @@
             <h3>iDTI-ESBoost: Identification of Drug Target Interaction Using Evolutionary and Structural Features with
                 Boosting
             </h3>
+            {#            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>#}
+            {#            <a href="#demo" class="btn btn-info" data-toggle="collapse">Abstract</a>#}
+            {#            <div id="demo" class="collapse">#}
+{#                            In this paper, we propose iDTI-ESBoost, a prediction model for identiﬁcation of drug target interactions#}
+{#                            using evolutionary and structural features. Our proposed method uses a novel balancing technique and a#}
+{#                            boosting technique for the binary classiﬁcation problem of drug-target interaction. On four benchmark#}
+{#                            datasets taken from a gold standard data, our method signiﬁcantly outperforms the state-of-the-art#}
+{#                            methods.#}
+{#                            Our system is readily available for use at: brl.uiu.ac.bd\iDTI-ESBoost#}
+            {##}
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal
+            </button>
 
-            <a href="#demo" class="btn btn-info" data-toggle="collapse">Abstract</a>
-            <div id="demo" class="collapse">
-                In this paper, we propose iDTI-ESBoost, a prediction model for identiﬁcation of drug target interactions
-                using evolutionary and structural features. Our proposed method uses a novel balancing technique and a
-                boosting technique for the binary classiﬁcation problem of drug-target interaction. On four benchmark
-                datasets taken from a gold standard data, our method signiﬁcantly outperforms the state-of-the-art
-                methods.
-                Our system is readily available for use at: brl.uiu.ac.bd\iDTI-ESBoost
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"></button>
+                            <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                            In this paper, we propose iDTI-ESBoost, a prediction model for identiﬁcation of drug target interactions
+                            using evolutionary and structural features. Our proposed method uses a novel balancing technique and a
+                            boosting technique for the binary classiﬁcation problem of drug-target interaction. On four benchmark
+                            datasets taken from a gold standard data, our method signiﬁcantly outperforms the state-of-the-art
+                            methods.
+                            Our system is readily available for use at: brl.uiu.ac.bd\iDTI-ESBoost
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
 
-
         </div>
+        </br>
+        {% if form != 'null' %}
+            <div class="container-fluid">
+                <div class="jumbotron col-lg-offset-3 col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-offset-1">
+                            <form method="post" action="{% url 'music:index' %}" id="theForm"
+                                  enctype="multipart/form-data">
+                                {% csrf_token %}
 
-    </div>
-    </br>
-    {% if form != 'null' %}
-        <div class="container-fluid">
-            <div class="jumbotron col-lg-offset-3 col-lg-6">
-                <div class="row">
-                    <div class="col-lg-offset-1">
-                        <form method="post" action="{% url 'music:index' %}" id="theForm" enctype="multipart/form-data">
-                            {% csrf_token %}
-
-                            {{ form.as_p }}
-                            {#                        <input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> </input>#}
-                            <button type="submit" class="btn btn-info btn-lg" data-toggle="modal"
-                                    data-target="#myModal">
-                                Submit
-                            </button>
-                        </form>
+                                {{ form.as_p }}
+                                {#                        <input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> </input>#}
+                                <button type="submit" class="btn btn-info btn-lg" data-toggle="modal"
+                                        data-target="#myModal">
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    {% endif %}
-    {% if form == 'null' %}
-    <div class="container-fluid">
-        <div class="">
-            <div class="jumbotron col-lg-6 col-md-8 col-lg-offset-3">
-                {% if error == '' %}
-                    {#                <div class="jumbotron col-lg-6 col-md-8 col-lg-offset-3">#}
-                    <h1>Result </h1>
+        {% endif %}
+        {% if form == 'null' %}
+            <div class="container-fluid">
+                <div class="">
+                    <div class="jumbotron col-lg-6 col-md-8 col-lg-offset-3">
+                        {% if error == '' %}
+                            {#                <div class="jumbotron col-lg-6 col-md-8 col-lg-offset-3">#}
+                            <h1>Result </h1>
 
-                    <h2>For dataset {{ dataset }} </h2>
-                    <h2>Probability of not interacting {{ zero_class }} </h2>
-                    <h2>Probability of interacting {{ one_class }} </h2>
-                    {#                </div>#}
-                {% endif %}
-                {% if error == 'faulty file' %}
+                            <h2>For dataset {{ dataset }} </h2>
+                            <h2>Probability of not interacting {{ zero_class }} </h2>
+                            <h2>Probability of interacting {{ one_class }} </h2>
+                            {#                </div>#}
+                        {% endif %}
+                        {% if error == 'faulty file' %}
 
-                    <h1>Faulty file </h1>
+                            <h1>Faulty file </h1>
 
 
-                {% endif %}
-{#                <a href="{% url 'music:index' %}">#}
-{#                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;#}
-{##}
-{#                    </a>#}
+                        {% endif %}
+                        {#                <a href="{% url 'music:index' %}">#}
+                        {#                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;#}
+                        {##}
+                        {#                    </a>#}
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    {% endif %}
-    {#        <div id="myModal" class="modal fade" role="dialog" >#}
-    {#            <div class="modal-dialog">#}
-    {##}
-    {#                <!-- Modal content-->#}
-    {#                <div class="modal-content">#}
-    {#                    <div class="modal-header">#}
-    {#                        <button type="button" class="close" data-dismiss="modal">&times;</button>#}
-    {#                        <h4 class="modal-title">Modal Header</h4>#}
-    {#                    </div>#}
-    {#                    <div class="modal-body">#}
-    {#                        <p>Some text in the modal.</p>#}
-    {#                    </div>#}
-    {#                    <div class="modal-footer">#}
-    {#                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {##}
-    {#            </div>#}
-    {#        </div>#}
+        {% endif %}
+        {#        <div id="myModal" class="modal fade" role="dialog" >#}
+        {#            <div class="modal-dialog">#}
+        {##}
+        {#                <!-- Modal content-->#}
+        {#                <div class="modal-content">#}
+        {#                    <div class="modal-header">#}
+        {#                        <button type="button" class="close" data-dismiss="modal">&times;</button>#}
+        {#                        <h4 class="modal-title">Modal Header</h4>#}
+        {#                    </div>#}
+        {#                    <div class="modal-body">#}
+        {#                        <p>Some text in the modal.</p>#}
+        {#                    </div>#}
+        {#                    <div class="modal-footer">#}
+        {#                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {##}
+        {#            </div>#}
+        {#        </div>#}
 
-    {#    {% if all_albums %}#}
-    {#        <ul>#}
-    {#            {% for album in all_albums %}#}
-    {#                <li><a href="{% url 'music:detail' album.id %}"> {{ album.album_name }}   </a></li>#}
-    {#                <div class="col-sm-2">#}
-    {#                    <div class="row">#}
-    {#                        <div class="portfolio-items" style="position: relative ; height: 160000px; width: auto">#}
-    {#                            <article class="col-sm-6 portfolio-item jquery"#}
-    {#                                     style="position: relative; left: 45px; top: 98px; ">#}
-    {#                                <figure>#}
-    {#                                    <a href="{% url 'music:detail' album.id %}">#}
-    {#                                        <!-- album.album_logo is the image object url converts it to file path  -->#}
-    {#                                        <img src="{{ album.album_logo.url  }}" alt="#">#}
-    {#                                        <h3>{{ album.album_name }}</h3>#}
-    {#                                        <h3>{{ album.genre }}</h3>#}
-    {##}
-    {##}
-    {#                                    </a>#}
-    {##}
-    {#                                    <form action="{% url 'music:album-delete' album.id %}" method="post" style="display: inline;">#}
-    {#                                        {% csrf_token %}#}
-    {#                                        <input type="hidden" name="album_id" value="{{ album.id }}">#}
-    {#                                        <button type="submit" class="btn btn-default btn-sm">#}
-    {#                                            <span class="glyphicon glyphicon-trash"></span>#}
-    {#                                        </button>#}
-    {#                                    </form>#}
-    {##}
-    {##}
-    {#                                </figure>#}
-    {#                            </article>#}
-    {#                        </div>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {##}
-    {#            {% endfor %}#}
-    {#        </ul>#}
-    {#    {% else %}#}
-    {#        <h1> No Album Found !!! </h1>#}
-    {#    {% endif %}#}
-    {##}
-    {#    <script>#}
-    {#        $(document).ready(function () {#}
-    {#            $("#myBtn").click(function () {#}
-    {#                $("#myModal").modal();#}
-    {#            });#}
-    {#        });#}
-    {#    </script>#}
+        {#    {% if all_albums %}#}
+        {#        <ul>#}
+        {#            {% for album in all_albums %}#}
+        {#                <li><a href="{% url 'music:detail' album.id %}"> {{ album.album_name }}   </a></li>#}
+        {#                <div class="col-sm-2">#}
+        {#                    <div class="row">#}
+        {#                        <div class="portfolio-items" style="position: relative ; height: 160000px; width: auto">#}
+        {#                            <article class="col-sm-6 portfolio-item jquery"#}
+        {#                                     style="position: relative; left: 45px; top: 98px; ">#}
+        {#                                <figure>#}
+        {#                                    <a href="{% url 'music:detail' album.id %}">#}
+        {#                                        <!-- album.album_logo is the image object url converts it to file path  -->#}
+        {#                                        <img src="{{ album.album_logo.url  }}" alt="#">#}
+        {#                                        <h3>{{ album.album_name }}</h3>#}
+        {#                                        <h3>{{ album.genre }}</h3>#}
+        {##}
+        {##}
+        {#                                    </a>#}
+        {##}
+        {#                                    <form action="{% url 'music:album-delete' album.id %}" method="post" style="display: inline;">#}
+        {#                                        {% csrf_token %}#}
+        {#                                        <input type="hidden" name="album_id" value="{{ album.id }}">#}
+        {#                                        <button type="submit" class="btn btn-default btn-sm">#}
+        {#                                            <span class="glyphicon glyphicon-trash"></span>#}
+        {#                                        </button>#}
+        {#                                    </form>#}
+        {##}
+        {##}
+        {#                                </figure>#}
+        {#                            </article>#}
+        {#                        </div>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {##}
+        {#            {% endfor %}#}
+        {#        </ul>#}
+        {#    {% else %}#}
+        {#        <h1> No Album Found !!! </h1>#}
+        {#    {% endif %}#}
+        {##}
+        {#    <script>#}
+        {#        $(document).ready(function () {#}
+        {#            $("#myBtn").click(function () {#}
+        {#                $("#myModal").modal();#}
+        {#            });#}
+        {#        });#}
+        {#    </script>#}
 
 {% endblock %}
