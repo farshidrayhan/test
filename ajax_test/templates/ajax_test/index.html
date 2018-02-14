@@ -10,79 +10,59 @@
 
     <div class="container">
         <div class="well well-lg">
-            <h3>Test ajax</h3>
-            <a href="#demo" class="btn btn-info" data-toggle="collapse">Abstract</a>
+
+
+            <h3>iDTI-ESBoost: Identification of Drug Target Interaction Using Evolutionary and Structural Features with
+                Boosting
+            </h3>
+            <z href="#demo" class="btn btn-block btn-default" data-toggle="collapse">Abstract</z>
             <div id="demo" class="collapse">
-                Test document
+
+
+                Prediction of new drug-target interactions is extremely important as it can lead the re-
+                searchers to find new uses for old drugs and to realize the therapeutic profiles or side effects
+                thereof. However, experimental prediction of drug-target interactions is expensive and time-
+                consuming. As a result, computational methods for prediction of new drug-target interactions
+                have gained much interest in recent times.
+
+                <br>
+                We present iDTI-ESBoost, a prediction model for identification of drug-target interactions
+                using evolutionary and structural features. Our proposed method uses a novel balancing
+                technique and a boosting technique for the binary classification problem of drug-target in-
+                teraction. On four benchmark datasets taken from a gold standard data, iDTI-ESBoost
+                outperforms the state-of-the-art methods in terms of area under Receiver operating charac-
+                teristic (auROC) curve. iDTI-ESBoost also outperforms the latest and the best-performing
+                method in the literature to-date in terms of area under precision recall (auPR) curve. This
+                is significant as auPR curves are argued to be more appropriate as a metric for comparison
+                for imbalanced datasets, like the one studied in this research. In the sequel, our experiments
+                establish the effectiveness of the classifier, balancing methods and the novel features incor-
+                porated in iDTI-ESBoost.
+                <br>
+                iDTI-ESBoost is a novel prediction method that has for the first time exploited the struc-
+                tural features along with the evolutionary features to predict drug-protein interactions. We
+                believe the excellent performance of iDTI-ESBoost both in terms of auROC and auPR
+                would motivate the researchers and practitioners to use it to predict drug-target interactions.
+                To facilitate that, iDTI-ESBoost is readily available for use at: http://farshidrayhan.
+                pythonanywhere.com/iDTI-ESBoost/
+
+
             </div>
         </div>
 
     </div>
-
-    {% block javascript %}
-        <script>
-
-        var mail = 0;
-        var name = 0;
-
-            $(":input").change(function (e) {
-
-
-                console.log($("#id_name").val());
-                console.log($("#id_mail").val());
-{#                console.log($(this).attr('id_mail'));#}
-                var name = $("#id_name").val();
-                var mail = $("#id_mail").val();
-
-{#                va#}
-
-
-                $.ajax({
-                    url: 'ajax/validate_name/',
-                    data: {
-                        'name': name,
-                        'mail': mail
-                        {#                        'mail': mail#}
-                    },
-                    dataType: 'json',
-                    success: function (data) {
-                        if ( data.is_taken != 404)
-                            add_stuff(data.is_taken);
-
-                    }
-                });
-            });
-
-        </script>
-        <script>
-            function add_stuff(parameter) {
-                var ele = document.createElement("h4");
-                var node = document.createTextNode(parameter);
-
-                ele.appendChild(node);
-
-                var element = document.getElementById("div")
-                element.appendChild(ele)
-            }
-
-        </script>
-
-
-    {% endblock %}
-
-
-    <br>
+    </br>
     {% if form != 'null' %}
         <div class="container-fluid">
             <div class="jumbotron col-lg-offset-3 col-lg-6">
                 <div class="row">
                     <div class="col-lg-offset-1">
-                        <form method="post">
-
+                        <form method="post" action="{% url 'ajax_test:index' %}" id="theForm" enctype="multipart/form-data">
                             {% csrf_token %}
 
                             {{ form.as_p }}
-                            <button type="submit" class="btn btn-info btn-lg">
+                            {#                        <input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> </input>#}
+                            <button type="submit" class="btn btn-info btn-lg" data-toggle="modal"
+                                    data-target="#myModal">
                                 Submit
                             </button>
                         </form>
@@ -91,26 +71,99 @@
             </div>
         </div>
     {% endif %}
-    {#    {% if form == 'null' %}#}
-    <div class="container-fluid">
-        <div class="">
-            <div class="jumbotron col-lg-6 col-md-8 col-lg-offset-3" id="div">
-                {% if error == '' %}
-                    <h2>name {{ name }} </h2>
-                    <h2>mail {{ mail }} </h2>
-                {% endif %}
-                {% if error == 'faulty file' %}
-                    <h1>Faulty file </h1>
-                {% endif %}
-                <h1></h1>
+    {% if form == 'null' %}
+        <div class="container-fluid">
+            <div class="">
+                <div class="jumbotron col-lg-6 col-md-8 col-lg-offset-3">
+                    {% if error == '' %}
+                        {#                <div class="jumbotron col-lg-6 col-md-8 col-lg-offset-3">#}
+                        <h1>Result </h1>
+
+                        <h2>For dataset {{ dataset }} </h2>
+                        <h2>Probability of not interacting {{ zero_class }} </h2>
+                        <h2>Probability of interacting {{ one_class }} </h2>
+                        {#                </div>#}
+                    {% endif %}
+                    {% if error == 'faulty file' %}
+
+                        <h1>Faulty file </h1>
+
+
+                    {% endif %}
+                    {#                <a href="{% url 'ajax_test:index' %}">#}
+                    {#                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;#}
+                    {##}
+                    {#                    </a>#}
+                </div>
             </div>
         </div>
-    </div>
+    {% endif %}
+    {#        <div id="myModal" class="modal fade" role="dialog" >#}
+    {#            <div class="modal-dialog">#}
+    {##}
+    {#                <!-- Modal content-->#}
+    {#                <div class="modal-content">#}
+    {#                    <div class="modal-header">#}
+    {#                        <button type="button" class="close" data-dismiss="modal">&times;</button>#}
+    {#                        <h4 class="modal-title">Modal Header</h4>#}
+    {#                    </div>#}
+    {#                    <div class="modal-body">#}
+    {#                        <p>Some text in the modal.</p>#}
+    {#                    </div>#}
+    {#                    <div class="modal-footer">#}
+    {#                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {##}
+    {#            </div>#}
+    {#        </div>#}
 
-
-
-
-
+    {#    {% if all_albums %}#}
+    {#        <ul>#}
+    {#            {% for album in all_albums %}#}
+    {#                <li><a href="{% url 'music:detail' album.id %}"> {{ album.album_name }}   </a></li>#}
+    {#                <div class="col-sm-2">#}
+    {#                    <div class="row">#}
+    {#                        <div class="portfolio-items" style="position: relative ; height: 160000px; width: auto">#}
+    {#                            <article class="col-sm-6 portfolio-item jquery"#}
+    {#                                     style="position: relative; left: 45px; top: 98px; ">#}
+    {#                                <figure>#}
+    {#                                    <a href="{% url 'music:detail' album.id %}">#}
+    {#                                        <!-- album.album_logo is the image object url converts it to file path  -->#}
+    {#                                        <img src="{{ album.album_logo.url  }}" alt="#">#}
+    {#                                        <h3>{{ album.album_name }}</h3>#}
+    {#                                        <h3>{{ album.genre }}</h3>#}
+    {##}
+    {##}
+    {#                                    </a>#}
+    {##}
+    {#                                    <form action="{% url 'music:album-delete' album.id %}" method="post" style="display: inline;">#}
+    {#                                        {% csrf_token %}#}
+    {#                                        <input type="hidden" name="album_id" value="{{ album.id }}">#}
+    {#                                        <button type="submit" class="btn btn-default btn-sm">#}
+    {#                                            <span class="glyphicon glyphicon-trash"></span>#}
+    {#                                        </button>#}
+    {#                                    </form>#}
+    {##}
+    {##}
+    {#                                </figure>#}
+    {#                            </article>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {##}
+    {#            {% endfor %}#}
+    {#        </ul>#}
+    {#    {% else %}#}
+    {#        <h1> No Album Found !!! </h1>#}
+    {#    {% endif %}#}
+    {##}
+    {#    <script>#}
+    {#        $(document).ready(function () {#}
+    {#            $("#myBtn").click(function () {#}
+    {#                $("#myModal").modal();#}
+    {#            });#}
+    {#        });#}
+    {#    </script>#}
 
 {% endblock %}
-

@@ -1,4 +1,4 @@
-{% extends 'music/base.html' %}
+{% extends 'ajax_test/base.html' %}
 {% block title %}
     Downloads
 {% endblock %}
@@ -28,13 +28,14 @@
             <h3>
                 <p>Pre trained models for each of the target group is available in the following links . The models are
                     in </p>
-                <p> .pkl fromat . Use pickle library from python in order to load the models . More
+                <p> .pkl fromat . Use pickle library from python (version 3.5) in order to load the models .</p>
+                <p> More
                     <a href="https://pythonhosted.org/joblib/persistence.html">here</a>
                 </p>
 
             </h3>
-            </br>
-            </br>
+            <br>
+
             <h4>
                 Pre Trained model for Enzyme
                 <a href="{{ MEDIA_URL }}/media/enzyme.pkl">
@@ -63,9 +64,9 @@
 
         </div>
 
-                <div class="well">
+        <div class="well">
             <h3>
-                <p>Sample Spd file and PSSM file are provided in the following links .    </p>
+                <p>Sample Spd file and PSSM file are provided in the following links . </p>
 
             </h3>
             </br>
@@ -85,41 +86,41 @@
 
         </div>
 
-{#        <div class="col-lg-offset-4 col-lg-4">#}
-            {#            <div class="jumbotron">#}
-            {#                #}
-            {#            </div>#}
-{##}
-            {#            <div class="well">#}
-{#            <div class="col-lg-offset-2">#}
-{#                <h3>#}
-{#                    Sample SPD file#}
-{#                    <a href="{{ MEDIA_URL }}/media/spd">#}
-{#                        here#}
-{#                    </a>#}
-{#                </h3>#}
-{#                <h3>#}
-{#                    Sample PSSM file#}
-{#                    <a href="{{ MEDIA_URL }}/media/pssm">#}
-{#                        here#}
-{#                    </a>#}
-{#                </h3>#}
-{##}
-{#            </div>#}
-            {#            </div>#}
-{##}
-{#        </div>#}
-{#    </div>#}
+        {#        <div class="col-lg-offset-4 col-lg-4">#}
+        {#            <div class="jumbotron">#}
+        {#                #}
+        {#            </div>#}
+        {##}
+        {#            <div class="well">#}
+        {#            <div class="col-lg-offset-2">#}
+        {#                <h3>#}
+        {#                    Sample SPD file#}
+        {#                    <a href="{{ MEDIA_URL }}/media/spd">#}
+        {#                        here#}
+        {#                    </a>#}
+        {#                </h3>#}
+        {#                <h3>#}
+        {#                    Sample PSSM file#}
+        {#                    <a href="{{ MEDIA_URL }}/media/pssm">#}
+        {#                        here#}
+        {#                    </a>#}
+        {#                </h3>#}
+        {##}
+        {#            </div>#}
+        {#            </div>#}
+        {##}
+        {#        </div>#}
+        {#    </div>#}
 
-    {#        <div class="well well-lg">#}
-    {#            <h3>#}
-    {#                Sample PSSM file#}
-    {#                <a href="{{ MEDIA_URL }}/media/pssm">#}
-    {#                here#}
-    {#                </a>#}
-    {#            </h3>#}
-    {##}
-    {#        </div>#}
+        {#        <div class="well well-lg">#}
+        {#            <h3>#}
+        {#                Sample PSSM file#}
+        {#                <a href="{{ MEDIA_URL }}/media/pssm">#}
+        {#                here#}
+        {#                </a>#}
+        {#            </h3>#}
+        {##}
+        {#        </div>#}
 
     </div>
 

@@ -281,15 +281,15 @@ class IndexView(generic.ListView):
 
 class ContributorsView(generic.TemplateView):
 
-    template_name = 'music/contributors.html'
+    template_name = 'ajax_test/contributors.html'
 
 class DownloadsView(generic.TemplateView):
 
-    template_name = 'music/downloads.html'
+    template_name = 'ajax_test/downloads.html'
 
 class InstructionsView(generic.TemplateView):
 
-    template_name = 'music/instructions.html'
+    template_name = 'ajax_test/instructions.html'
 
 #
 # class DetailView(generic.DetailView):

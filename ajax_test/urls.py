@@ -24,7 +24,11 @@ urlpatterns = [
     # /music/
                     # classes for each view
     url(r'^$',views.IndexView.as_view(),name='index'),
-    url(r'^ajax/validate_name/$',views.validate_name.as_view(),name='validate_name'),
+    # url(r'^ajax/validate_name/$',views.validate_name.as_view(),name='validate_name'),
+    # url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^contributors$', views.ContributorsView.as_view(), name='contributors'),
+    url(r'^downloads$', views.DownloadsView.as_view(), name='downloads'),
+    url(r'^instructions$', views.InstructionsView.as_view(), name='instructions'),
     # url(r'^instructions$',views.InstructionsView.as_view(),name='instructions'),
 
 
