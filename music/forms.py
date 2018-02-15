@@ -33,10 +33,10 @@ class indexForm2(forms.Form):
     ic = 'nr'
 
     dataset_choice = (
-        (ic, 'IC cc'),
+        (ic, 'Ion Channel'),
         (enzyme, 'Enzyme'),
         (nr, 'Nuclear Receptor'),
-        (gpcr, 'GPCR'),
+        (gpcr, 'G-protein-coupled receptors'),
     )
     target_group = forms.ChoiceField(choices=dataset_choice)
     spd = forms.FileField()
