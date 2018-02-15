@@ -60,7 +60,7 @@
                             {% csrf_token %}
 
                             {{ form.as_p }}
-                            {#                        <input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> </input>#}
+                            <!--<input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">-->
                             <button type="submit" class="btn btn-info btn-lg" data-toggle="modal"
                                     data-target="#myModal">
                                 Submit
@@ -121,14 +121,14 @@
     {#    {% if all_albums %}#}
     {#        <ul>#}
     {#            {% for album in all_albums %}#}
-    {#                <li><a href="{% url 'music:detail' album.id %}"> {{ album.album_name }}   </a></li>#}
+    {#                <li><a href="{% url 'ajax_test:detail' album.id %}"> {{ album.album_name }}   </a></li>#}
     {#                <div class="col-sm-2">#}
     {#                    <div class="row">#}
     {#                        <div class="portfolio-items" style="position: relative ; height: 160000px; width: auto">#}
     {#                            <article class="col-sm-6 portfolio-item jquery"#}
     {#                                     style="position: relative; left: 45px; top: 98px; ">#}
     {#                                <figure>#}
-    {#                                    <a href="{% url 'music:detail' album.id %}">#}
+    {#                                    <a href="{% url 'ajax_test:detail' album.id %}">#}
     {#                                        <!-- album.album_logo is the image object url converts it to file path  -->#}
     {#                                        <img src="{{ album.album_logo.url  }}" alt="#">#}
     {#                                        <h3>{{ album.album_name }}</h3>#}
@@ -137,7 +137,7 @@
     {##}
     {#                                    </a>#}
     {##}
-    {#                                    <form action="{% url 'music:album-delete' album.id %}" method="post" style="display: inline;">#}
+    {#                                    <form action="{% url 'ajax_test:album-delete' album.id %}" method="post" style="display: inline;">#}
     {#                                        {% csrf_token %}#}
     {#                                        <input type="hidden" name="album_id" value="{{ album.id }}">#}
     {#                                        <button type="submit" class="btn btn-default btn-sm">#}

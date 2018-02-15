@@ -15,7 +15,9 @@ import numpy as np
 from . import pssm_to_bigram,spider_to_structural_info,\
     spider_to_auto_covar_generate,spider_to_bigram,drug_list_generator
 from django.views import generic
-from music.forms import indexForm
+from django.views.generic import FormView
+from music.forms import indexForm2 as indexForm
+# from ajax_test.form import indexForm
 from .models import Drugs
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
@@ -45,64 +47,13 @@ class OverwriteStorage(FileSystemStorage):
         if self.exists(name):
             os.remove(os.path.join(settings.MEDIA_ROOT, name))
         return name
-# from .models import Album,Song
-# # Create your views here.
-#
-# # def index(request):
-# #     all_albums = Album.objects.all()
-# #     template = loader.get_template('music/index.html')
-# #     context = {
-# #         'all_albums' : all_albums,
-# #     }
-# #
-# #     # using context i am sending the database values to the html page
-# #     return HttpResponse(template.render(context,request ))
-#
-# def index(request):
-#     all_albums = Album.objects.all()
-#     context = {
-#         'all_albums' : all_albums,
-#     }
-#
-#     # using context i am sending the database values to the html page
-#     return render(request,'music/index.html',context)
-#
-#
-# def detail(request,album_id):
-#     # try:
-#     #     album = Album.objects.get(pk=album_id)
-#     # except Album.DoesNotExist:
-#     #     raise Http404("Msg in 404")
-#     album = get_object_or_404(Album , pk = album_id)
-#     return render(request,'music/detail.html',{'album' : album})
-#     # return HttpResponse("<h1>This is the album  </h1>")
-#
-# def favorite(request,album_id ):
-#     album = get_object_or_404(Album , pk = album_id)
-#
-#     try:
-#         selected_song = album.song_set.get( pk = request.POST['song'] )
-#
-#     except (KeyError , Song.DoesNotExist) :
-#         return render(request,'music/detail.html',{'album':album , 'error_message': "no song selected" })
-#
-#     else:
-#         if selected_song.is_favorite == True:
-#             selected_song.is_favorite = False
-#         else:
-#             selected_song.is_favorite = True
-#
-#         selected_song.save()
-#
-#         return render(request, 'music/detail.html', {'album': album})
-#
-################################################################################################################
-#               Generic Views
+
+
 
 class IndexView(generic.ListView):
 
     template_name = 'ajax_test/index.html'
-    context_object_name = 'all_albums' # now the returned list is stored in this var for the html to know
+    # context_object_name = 'all_albums' # now the returned list is stored in this var for the html to know
 
     # def get_queryset(self):
     #     return Album.objects.all()
@@ -114,6 +65,7 @@ class IndexView(generic.ListView):
     def post(self,request):
         form = indexForm(request.POST,request.FILES)
 
+        print(form)
         # spd = request.FILES['spd']
         error = ''
 
@@ -124,55 +76,24 @@ class IndexView(generic.ListView):
             # return conn
         except Error as e:
             print(e)
-        # val = "D00704"
-        # x = "SELECT fingerprint FROM music_drugs where drug = (?)",(val)
-        # print(x)
-        # for row in conn.execute("select fingerprint from music_drugs where drug =(?)",(val)):
-        #     print(row)
-        #
-        # for e in Drugs.objects.get(drug='D00704'):
-        #     print(e.fingerprint)
-        #
-        # One time code to load drugs in DB
-        #
-        # with open('C:/Users/Farshid/Dropbox/PR/table.csv', newline='') as csvfile:
-        #     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
-        #     counter = 0
-        #     drug_dict = {}
-        #     for row in spamreader:
-        #         # if counter > 7:
-        #         #     break
-        #
-        #         drugs = row[0]
-        #         # fingerprint = list(map(int, ''.join(row[1]).split()))
-        #         fingerprint = ''.join(row[1])
-        #         drug_dict[drugs] = fingerprint
-        #         # print(drugs)
-        #         # print(fingerprint)
-        #
-        #         counter += 1
-        #         print("                                         ",counter)
-        #     counter = 0
-        #     for i in drug_dict:
-        #         # print(i, drug_dict[i])
-        #         print(counter)
-        #         # conn.execute("insert INTO music_drugs VALUES (?,?,?)",(int(counter),i,drug_dict[i]))
-        #         # conn.commit()
-        #         counter += 1
-        #
-        #         # if counter == 7:
-        #         #     break
-        #
-        #
-        # conn.close()
+
+
 
         # getting data from form
+        # spd = 'faka !!!'
         if form.is_valid():
+            print("valid")
             target_group = form.cleaned_data['target_group']
+            print('done !!!')
             spd = form.cleaned_data['spd']
+            print('done !!!')
             pssm = form.cleaned_data['pssm']
+            print('done !!!')
             drug = form.cleaned_data['drug']
-
+            print('done !!!')
+        else:
+            print("form not valid !!!!")
+        # print("type ", type(spd))
         # trying to load txts rcved
         try:
 
@@ -235,7 +156,7 @@ class IndexView(generic.ListView):
 
             # for v in drug_file:
             #     if v == '':
-
+            #
             # print(drug_file)
             # print(type(drug_file.split(',')))
             # print(type(drug_file))
@@ -257,6 +178,7 @@ class IndexView(generic.ListView):
             one_class = prediction[0][1]
         except  :
             error = "faulty file"
+            print(error)
 
 
 
@@ -278,6 +200,7 @@ class IndexView(generic.ListView):
         }
         args = dict # dictonary is sent as an argument
         return render(request, self.template_name, args)
+
 class DownloadsView(generic.TemplateView):
     template_name = 'ajax_test/downloads.html'
 
@@ -289,24 +212,3 @@ class ContributorsView(generic.TemplateView):
 
     template_name = 'ajax_test/contributors.html'
 
-class validate_name(generic.CreateView):
-
-    def get(self, request):
-        name = request.GET.get('name', None)
-
-        mail = request.GET.get('mail', None)
-
-
-        try:
-            score = float(name) + float(mail)
-
-        except:
-            score = 404
-    # print(float(name))
-    # print(float(mail))
-    # print(score)
-        data = {
-            'is_taken': score
-        }
-
-        return JsonResponse(data)

@@ -23,6 +23,26 @@ class indexForm(forms.Form):
     pssm = forms.FileField()
     drug = forms.ModelChoiceField(queryset=Drugs.objects.all().order_by('drug'))
 
+
+
+class indexForm2(forms.Form):
+    # post = forms.CharField()
+    enzyme = 'gpcr'
+    nr = 'ic'
+    gpcr = 'enzyme'
+    ic = 'nr'
+
+    dataset_choice = (
+        (ic, 'IC cc'),
+        (enzyme, 'Enzyme'),
+        (nr, 'Nuclear Receptor'),
+        (gpcr, 'GPCR'),
+    )
+    target_group = forms.ChoiceField(choices=dataset_choice)
+    spd = forms.FileField()
+    pssm = forms.FileField()
+    drug = forms.ModelChoiceField(queryset=Drugs.objects.all().order_by('drug'))
+
 # class registrationForm(UserCreationForm):
 #     email = forms.EmailField(required=True)
 #
