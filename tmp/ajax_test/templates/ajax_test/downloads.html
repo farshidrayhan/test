@@ -1,0 +1,126 @@
+{% extends 'music/base.html' %}
+{% block title %}
+    Downloads
+{% endblock %}
+{% block nav_bar_download %}
+    active
+{% endblock %}
+
+{% block body %}
+    {#    <div class="container">#}
+    {#        <div class="well well-lg">#}
+    {#            <h3>#}
+    {#                Sample SPD file#}
+    {#                <a href="{{ MEDIA_URL }}/media/spd">#}
+    {#                here#}
+    {#                </a>#}
+    {#            </h3>#}
+    {#            <h3>#}
+    {#                Sample PSSM file#}
+    {#                <a href="{{ MEDIA_URL }}/media/pssm">#}
+    {#                here#}
+    {#                </a>#}
+    {#            </h3>#}
+    {##}
+    {#        </div>#}
+    <div class="container">
+        <div class="well">
+            <h3>
+                <p>Pre trained models for each of the target group is available in the following links . The models are
+                    in </p>
+                <p> .pkl fromat . Use pickle library from python in order to load the models . More
+                    <a href="https://pythonhosted.org/joblib/persistence.html">here</a>
+                </p>
+
+            </h3>
+            </br>
+            </br>
+            <h4>
+                Pre Trained model for Enzyme
+                <a href="{{ MEDIA_URL }}/media/enzyme.pkl">
+                    here
+                </a>
+            </h4>
+            <h4>
+                Pre Trained model for IC
+                <a href="{{ MEDIA_URL }}/media/ic.pkl">
+                    here
+                </a>
+            </h4>
+            <h4>
+                Pre Trained model for GPCR
+                <a href="{{ MEDIA_URL }}/media/gpcr.pkl">
+                    here
+                </a>
+            </h4>
+            <h4>
+                Pre Trained model for Nuclear Receptor
+                <a href="{{ MEDIA_URL }}/media/nr.pkl">
+                    here
+                </a>
+            </h4>
+
+
+        </div>
+
+                <div class="well">
+            <h3>
+                <p>Sample Spd file and PSSM file are provided in the following links .    </p>
+
+            </h3>
+            </br>
+            </br>
+            <h4>
+                Sample SPD file
+                <a href="{{ MEDIA_URL }}/media/spd">
+                    here
+                </a>
+            </h4>
+            <h4>
+                Sample PSSM file
+                <a href="{{ MEDIA_URL }}/media/pssm">
+                    here
+                </a>
+            </h4>
+
+        </div>
+
+{#        <div class="col-lg-offset-4 col-lg-4">#}
+            {#            <div class="jumbotron">#}
+            {#                #}
+            {#            </div>#}
+{##}
+            {#            <div class="well">#}
+{#            <div class="col-lg-offset-2">#}
+{#                <h3>#}
+{#                    Sample SPD file#}
+{#                    <a href="{{ MEDIA_URL }}/media/spd">#}
+{#                        here#}
+{#                    </a>#}
+{#                </h3>#}
+{#                <h3>#}
+{#                    Sample PSSM file#}
+{#                    <a href="{{ MEDIA_URL }}/media/pssm">#}
+{#                        here#}
+{#                    </a>#}
+{#                </h3>#}
+{##}
+{#            </div>#}
+            {#            </div>#}
+{##}
+{#        </div>#}
+{#    </div>#}
+
+    {#        <div class="well well-lg">#}
+    {#            <h3>#}
+    {#                Sample PSSM file#}
+    {#                <a href="{{ MEDIA_URL }}/media/pssm">#}
+    {#                here#}
+    {#                </a>#}
+    {#            </h3>#}
+    {##}
+    {#        </div>#}
+
+    </div>
+
+{% endblock %}

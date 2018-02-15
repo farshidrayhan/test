@@ -19,8 +19,8 @@ from django.conf import settings # settings imported cause the original settings
 from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^iDTI-ESBoost/', include('music.urls')),
-    url(r'^ajax_test/', include('ajax_test.urls')),
+    url(r'^iDTI-ESBoost/', include('music.urls')),
+    url(r'^FRnet/', include('ajax_test.urls')),
 
     # url(r'', include('music.urls')),
     # url(r'', include('music.urls')),
